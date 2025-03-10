@@ -45,16 +45,30 @@
         .carousel {
             display: flex;
             overflow: hidden;
-            width: 80%;
+            width: 90%;
+            max-width: 800px;
+            height: auto;
             margin: auto;
             position: relative;
         }
         .carousel img {
             width: 100%;
+            height: auto;
             display: none;
+            object-fit: cover;
         }
         .carousel img.active {
             display: block;
+        }
+        .pricing-table {
+            border: 1px solid white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+            text-align: center;
+        }
+        .pricing-table h3 {
+            margin: 10px 0;
         }
     </style>
 </head>
@@ -86,9 +100,18 @@
                 <img src="img5.jpg" alt="Cama japonesa 5">
             </div>
         </div>
+        <div class="section" id="precios">
+            <h2>Precios</h2>
+            <div class="pricing-table">
+                <h3>2 Plazas</h3>
+                <p>S/. 1900</p>
+                <h3>Queen</h3>
+                <p>S/. 2100</p>
+            </div>
+        </div>
         <div class="section" id="contacto">
             <h2>Contáctenos</h2>
-            <a class="whatsapp" href="https://wa.me/941607813">Escríbenos por WhatsApp</a>
+            <a class="whatsapp" href="https://wa.me/+51941607813">Escríbenos por WhatsApp</a>
         </div>
     </div>
 
