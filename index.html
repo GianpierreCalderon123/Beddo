@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beddo - Camas Japonesas</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        .loader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .loader h1 {
+            font-size: 2.5em;
+        }
+        .content {
+            display: none;
+            padding: 20px;
+        }
+        .section {
+            margin: 50px 0;
+        }
+        .whatsapp {
+            display: inline-block;
+            padding: 10px 20px;
+            background: green;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 80%;
+            margin: auto;
+            position: relative;
+        }
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader" id="loader">
+      <h1>Beddo</h1>
+      <h1>ベッド</h1>
+      <h1>Camas Japonesas</h1>
+        <p>Descansa mejor con un diseño minimalista y ergonómico.</p>
+    </div>
+
+    <div class="content" id="content">
+        <h1>Bienvenido a Beddo</h1>
+        <div class="section" id="inicio">
+            <h2>Inicio</h2>
+            <p>Las camas japonesas combinan diseño elegante con funcionalidad.</p>
+            <p>Su diseño minimalista optimiza el espacio y promueve una mejor postura al dormir.</p>
+            <p>Fabricadas con materiales de alta calidad, garantizan durabilidad y confort.</p>
+            <p>Disponibles en diferentes estilos para adaptarse a cualquier tipo de habitación.</p>
+        </div>
+        <div class="section" id="fotos-videos">
+            <h2>Fotos y Videos</h2>
+            <p>Explora nuestra colección de camas japonesas.</p>
+            <div class="carousel">
+                <img src="img1.jpg" class="active" alt="Cama japonesa 1">
+                <img src="img2.jpg" alt="Cama japonesa 2">
+                <img src="img3.jpg" alt="Cama japonesa 3">
+                <img src="img4.jpg" alt="Cama japonesa 4">
+                <img src="img5.jpg" alt="Cama japonesa 5">
+            </div>
+        </div>
+        <div class="section" id="contacto">
+            <h2>Contáctenos</h2>
+            <a class="whatsapp" href="https://wa.me/941607813">Escríbenos por WhatsApp</a>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }, 1500);
+
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+        setInterval(showNextImage, 3000);
+    </script>
+</body>
+</html>
